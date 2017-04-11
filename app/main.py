@@ -4,9 +4,7 @@ from flask import Flask
 import boto.sqs
 from boto.sqs.message import Message
 
-sqs_conn = boto.sqs.connect_to_region(
-	"us-east"
-)
+sqs_conn = boto.sqs.connect_to_region("us-east-1")
 sms_q = sqs_conn.create_queue('sms-test', 120)
 
 # the all-important app variable for docker image
