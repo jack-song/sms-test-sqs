@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	reponse = sms_q.send_message(MessageBody="Hello OH")
+	response = sms_q.send_message(MessageBody="Hello OH")
 	return "Oh, Hello World" + response.get('MessageId')
 
 if __name__ == "__main__":
