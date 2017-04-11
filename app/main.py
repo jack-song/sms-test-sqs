@@ -3,7 +3,7 @@ from flask import Flask
 
 import boto3
 
-sqs = boto3.resource('sqs')
+sqs = boto3.resource('sqs', region_name="us-east-1")
 sms_q = sqs.get_queue_by_name(QueueName='sms-test')
 
 # the all-important app variable for docker image
