@@ -1,5 +1,5 @@
 FROM tiangolo/uwsgi-nginx-flask:flask
 
-RUN pip install boto
+RUN pip install -r requirements.txt
 
 COPY ./app /app
