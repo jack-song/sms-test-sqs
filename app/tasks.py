@@ -9,4 +9,5 @@ app = Celery('tasks', broker='sqs://', broker_transport_options=options)
 
 @app.task
 def run_test(message_id):
+    print(message_id)
     time.sleep(1)
