@@ -1,5 +1,3 @@
-FROM tiangolo/uwsgi-nginx:python3.5
-
-RUN pip install flask
+FROM tiangolo/uwsgi-nginx-flask:flask
 
 COPY ./app /app
