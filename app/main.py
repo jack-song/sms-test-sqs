@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	tasks.run_test("oh no id")
+	tasks.run_test.delay("oh no id")
 	return "Oh, Hello World"
 
 if __name__ == "__main__":
