@@ -1,8 +1,6 @@
 
 from flask import Flask
 
-import boto3
-
 import tasks
 
 # the all-important app variable for docker image
