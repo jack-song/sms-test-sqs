@@ -2,10 +2,10 @@ import time
 
 from celery import Celery
 
-options= {'polling_interval': 10}
+import broker_cred
 
 # first argument current module name, broker doesn't need keys if set for boto already
-app = Celery('tasks', broker='sqs://', broker_transport_options=options)
+app = Celery('tasks', broker=broker_cred.URL)
 
 @app.task
 def run_test(message_id):
