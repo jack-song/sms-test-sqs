@@ -19,12 +19,12 @@ python3, uses flask, celery, boto(for celery+sqs), requests(for profiling only)
 ### RabbitMQ
 - checkout branch `rabbit`
 - RabbitMQ must be installed on separate instance
-- broker must be specified in `app/config.py` as `URL = 'amqp://user:pass@server:5672//'`
+- broker must be specified in `app/config.py` like `app/sample_config.py`
 
 ## profiling
 
 ### client burden
-- gateway url to add a job must be specified in `config.py`
+- gateway url to add a job must be specified in `config.py` like `sample_config.py`
 - total processing time, for 1000 jobs is given in seconds
 
 ### processing speed
