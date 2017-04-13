@@ -28,6 +28,7 @@ python3, uses flask, celery, boto(for celery+sqs), requests(for profiling only)
     - sleep should be fairly accurate, and within-aws speeds should be fast
     - therefore doesn't matter much, but must make guarantee:
     - jobs must run slow enough for there always to be another job in the queue
+    - AKA queued messages should always be above 0 throughout run
     - otherwise we're measuring waiting time
 - adjust # of jobs
     - more = better precision (repeatable numbers, more confidence in results)
@@ -60,6 +61,14 @@ us-east-1, ec2, t2.micro, .1 second jobs, 100 requests, from nairobi
     - confirmed with another run (time to process ~63s, time to request ~65s)
 
 ### Set 1
-us-east-1, ec2, t2.micro, .5 second jobs, 300 requests, from nairobi
+us-east-1, ec2, t2.micro, 1.2 second jobs, 300 requests, from nairobi
 
 #### RabbitMQ
+- run-1 requesting: 198.38498800000016
+- run-1 processing: 360.809999943
+- run-2 requesting: 176.98746099999985
+- run-2 processing: 359.610000134
+- run-3 requesting: 197.1018840000002
+- run-3 processing: 
+- run-4 requesting:
+- run-4 processing: 
