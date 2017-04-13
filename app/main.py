@@ -1,15 +1,16 @@
-
+"""flask app"""
 from flask import Flask
 
 import tasks
 
-# the all-important app variable for docker image
-app = Flask(__name__)
+# app variable must be `app` for nginx-flask docker image
+app = Flask(__name__)  #pylint: disable=I0011,C0103
 
 @app.route("/")
 def hello():
-	tasks.run_test.delay("oh no id")
-	return "Oh, Hello World"
+    """index"""
+    tasks.run_test.delay("oh no id")
+    return "Oh, Hello World"
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', debug=True, port=80)
+    app.run(host='0.0.0.0', debug=True, port=80)
