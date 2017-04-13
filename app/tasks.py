@@ -6,7 +6,7 @@ from celery import Celery
 import config
 
 # adjust
-TASK_DURATION = 0.5
+TASK_DURATION = 1.2
 
 # first argument current module name, broker doesn't need keys if set for boto already
 CELERY_APP = Celery('tasks', broker=config.BROKER_URL)
