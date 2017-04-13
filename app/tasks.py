@@ -3,13 +3,18 @@ import time
 
 from celery import Celery
 
-import config
-
 # adjust
 TASK_DURATION = 1.2
 
+options= {
+    # downtime only if queue is empty (busy default)
+    'polling_interval': .3,
+    # can be set here or on AWS console
+    'wait_time_seconds': 20
+}
+
 # first argument current module name, broker doesn't need keys if set for boto already
-CELERY_APP = Celery('tasks', broker=config.BROKER_URL)
+CELERY_APP = Celery('tasks', broker='sqs://', broker_transport_options = options)
 
 @CELERY_APP.task
 def run_test(time_queued):
