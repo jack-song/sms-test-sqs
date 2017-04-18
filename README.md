@@ -64,11 +64,33 @@ us-east-1, ec2, t2.micro, .1 second jobs, 100 requests, from nairobi
 us-east-1, ec2, t2.micro, 1.2 second jobs, 300 requests, from nairobi
 
 #### RabbitMQ
+
+Apr 13, 5pm
 - run-1 requesting: 198.38498800000016
 - run-1 processing: 360.809999943
 - run-2 requesting: 176.98746099999985
 - run-2 processing: 359.610000134
 - run-3 requesting: 197.1018840000002
-- run-3 processing: 
-- run-4 requesting:
-- run-4 processing: 
+- run-3 processing: 359.610000134
+
+Apr 18, 11am
+- run-4 requesting: 251.19186099999996
+- run-4 processing: 366.289999962
+- run-5 requesting: 220.46736300000023
+- run-5 processing: 359.639999866
+
+#### AWS SQS
+
+Apr 13, 6pm
+- run-1 requesting: 341.88851900000014
+- run-1 processing: 378.99000001
+- run-2 requesting: 194.95904800000008
+- run-2 processing: 365.640000105
+
+Apr 18, 10am
+- run-3 requesting: 257.1152150000001
+- run-3 processing: 365.75999999
+- run-4 requesting: 212.9646309999999
+- run-4 processing: 365.109999895
+- run-5 requesting: 232.94280699999996
+- run-5 processing: 365.450000048
